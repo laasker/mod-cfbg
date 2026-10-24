@@ -27,21 +27,53 @@ struct PvPDifficultyEntry;
 
 enum FakeMorphs
 {
-    FAKE_M_FEL_ORC        = 21267,
-    FAKE_F_ORC            = 20316,
-    FAKE_M_DWARF          = 20317,
-    FAKE_M_NIGHT_ELF      = 20318,
-    FAKE_F_DRAENEI        = 20323,
-    FAKE_M_BROKEN_DRAENEI = 21105,
-    FAKE_M_TROLL          = 20321,
-    FAKE_M_HUMAN          = 19723,
-    FAKE_F_HUMAN          = 19724,
-    FAKE_M_BLOOD_ELF      = 20578,
-    FAKE_F_BLOOD_ELF      = 20579,
-    FAKE_F_GNOME          = 20320,
-    FAKE_M_GNOME          = 20580,
-    FAKE_F_TAUREN         = 20584,
-    FAKE_M_TAUREN         = 20585
+    //FAKE_M_FEL_ORC        = 21267,
+    //FAKE_F_ORC            = 20316,
+    //FAKE_M_DWARF          = 20317,
+    //FAKE_M_NIGHT_ELF      = 20318,
+    //FAKE_F_DRAENEI        = 20323,
+    //FAKE_M_BROKEN_DRAENEI = 21105,
+    //FAKE_M_TROLL          = 20321,
+    //FAKE_M_HUMAN          = 19723,
+    //FAKE_F_HUMAN          = 19724,
+    //FAKE_M_BLOOD_ELF      = 20578,
+    //FAKE_F_BLOOD_ELF      = 20579,
+    //FAKE_F_GNOME          = 20320,
+    //FAKE_M_GNOME          = 20580,
+    //FAKE_F_TAUREN         = 20584,
+    //FAKE_M_TAUREN         = 20585
+
+    // Hordes
+    FAKE_M_BLOOD_ELF = 20578,
+    FAKE_F_BLOOD_ELF = 20579,
+
+    FAKE_M_ORC = 50560, // precisa do patch
+    FAKE_F_ORC = 20316,
+
+    FAKE_M_TROLL = 20321,
+    FAKE_F_TROLL = 50562, // precisa do patch   // FAKE_F_TROLL missing
+
+    FAKE_M_UNDEAD_PLAYER = 50563, // precisa do patch     - old = // FAKE_M_UNDEAD missing
+    FAKE_F_UNDEAD_PLAYER = 50564, // precisa do patch     - old = // FAKE_F_UNDEAD missing
+
+    FAKE_M_TAUREN = 20585,
+    FAKE_F_TAUREN = 20584,
+
+    // Alliances
+    FAKE_M_HUMAN = 19723,
+    FAKE_F_HUMAN = 19724,
+
+    FAKE_M_DWARF = 20317,
+    FAKE_F_DWARF = 50565, // precisa do patch   - old = // FAKE_F_DWARF missing
+
+    FAKE_M_NIGHTELF = 20318,
+    FAKE_F_NIGHTELF = 50569, // precisa do patch   - old = FAKE_F_NIGHT_ELF missing
+
+    FAKE_M_DRAENEI = 50566, // precisa do patch
+    FAKE_F_DRAENEI = 20323,
+
+    FAKE_M_GNOME = 20580,
+    FAKE_F_GNOME = 20320
 };
 
 constexpr auto FACTION_FROSTWOLF_CLAN = 729;
@@ -239,7 +271,7 @@ private:
     std::unordered_map<Player*, bool> _forgetBGPlayersStore;
 
     std::array<RaceData, 12> _raceData{};
-    std::array<CFBGRaceInfo, 9> _raceInfo{};
+    std::array<CFBGRaceInfo, 10> _raceInfo{};
 
     // For config
     // = false so LoadConfig's disable-transition read is well-defined on the
